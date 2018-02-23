@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4882502152726962}
-  - component: {fileID: 114710700686944760}
   m_Layer: 0
   m_Name: PuzzleTrailPrefab
   m_TagString: Untagged
@@ -72,6 +71,7 @@ GameObject:
   - component: {fileID: 33067800948791910}
   - component: {fileID: 65706317462027566}
   - component: {fileID: 23410396801740302}
+  - component: {fileID: 114861790378626078}
   m_Layer: 0
   m_Name: PuzzleObject
   m_TagString: Untagged
@@ -86,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1280620124010912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.199, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4882502152726962}
@@ -99,8 +99,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1379119673801222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.092}
-  m_LocalScale: {x: 0.67730325, y: 1, z: 0.15140767}
+  m_LocalPosition: {x: 0, y: 0.95, z: 0.092}
+  m_LocalScale: {x: 1.4354926, y: 1.7168658, z: 0.22530374}
   m_Children: []
   m_Father: {fileID: 4882502152726962}
   m_RootOrder: 2
@@ -127,8 +127,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1254567283342790}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.761}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.96500003, z: -1.8510003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4882502152726962}
@@ -148,7 +148,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aac0143e92387ea48b7403349d1c3dc5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -299,19 +299,19 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1280620124010912}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09b28e6a1fd2cd04f8f0996e9e94e954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x_Tranform: 1
-  y_Tranform: 1
---- !u!114 &114710700686944760
+  x_Tranform: 0.5
+  y_Tranform: 0.5
+--- !u!114 &114861790378626078
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1233028516102278}
+  m_GameObject: {fileID: 1379119673801222}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0779664c84e54f4aa40ce945d749a43, type: 3}

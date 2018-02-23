@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TrailMovement : MonoBehaviour {
 
-	public float x_Tranform = 1.0f;
-	public float y_Tranform = 1.0f;
+	public float x_Tranform = 0.5f;
+	public float y_Tranform = 0.5f;
 
 	void Update () 
 	{
@@ -21,12 +21,12 @@ public class TrailMovement : MonoBehaviour {
 
 		if(Input.GetKey("left"))
 		{
-			print("left");
+			//print("left");
 			transform.Translate(-(y_Tranform) * Time.deltaTime * 1.0f, 0, 0);
 		}
 		if(Input.GetKey("right"))
 		{
-			print("right");
+			//print("right");
 			transform.Translate((y_Tranform) * Time.deltaTime * 1.0f, 0, 0);
 		} 
 	}

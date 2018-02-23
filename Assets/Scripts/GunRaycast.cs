@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class GunRaycast : MonoBehaviour {
 
-	private const string PUZZLE_OBJECTS_NAME = "PuzzleObject";
+	/* Raycast İşlemleri */
+    [SerializeField] private float range = 2F;
+	[SerializeField] private Camera cam;
+	private RaycastHit hit;
 
-	// private EnterPuzzle enterPuzzle;
-
-	private Camera cam;
-	// Cisimler ile etkileşime girmek için gereken değişkenler.
-    private RaycastHit hit;
-    private float theDistance;
-    public float range = 2;
+	[SerializeField] private GameObject[] PuzzleObjects;
 
 	void Start()
 	{
-		cam = Camera.main; 	
+		 PuzzleObjects = GameObject.FindGameObjectsWithTag("PuzzleObjects");	
 	}
 
 	void Update()
@@ -29,22 +26,28 @@ public class GunRaycast : MonoBehaviour {
 	
 	void InteractPuzzle()
     {
-        Vector3 forward = cam.transform.TransformDirection(Vector3.forward) * range;
-        Debug.DrawRay(cam.transform.position, forward, Color.green);
-
-        if (Physics.Raycast(cam.transform.position, (forward), out hit))
-        {
-            theDistance = hit.distance;
-            if (theDistance < range)
-            {
-                print(theDistance + " " + hit.collider.gameObject.name);
-            }
-        }
-
-		if(hit.collider.gameObject.name == PUZZLE_OBJECTS_NAME)
+		RaycastHit hit;
+		if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
 		{
-			GameObject.Find(hit.collider.gameObject.name).GetComponent<EnterPuzzle>().LockThePuzzle();
-			GameObject.Find("Trail").GetComponentInParent<TrailMovement>().enabled = true;//TODO Hatalı
-		}
-	}
+//			Debug.Log(hit.transform.name);
+
+			if(hit.collider.gameObject.name != null || hit.collider.gameObject.name != "")
+			{
+				if(hit.collider.gameObject.name.Contains("PuzzleObjectPrefab"))
+				{
+					for(int i = 0; i < PuzzleObjects.Length + 1; i++)
+					{
+						if(hit.collider.gameObject.name == "PuzzleObjectPrefab" + i)
+						{
+							print(hit.collider.gameObject.name);
+							
+							GameObject.Find(hit.collider.gameObject.name).GetComponent<EnterPuzzle>().LockThePuzzle();
+							GameObject.Find(hit.collider.gameObject.name).GetComponent<EnterPuzzle>().TrailMoveStatu(hit.collider.gameObject.name);
+						}
+					}
+				}
+			}
+        }
+	}	
 }
+
